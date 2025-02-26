@@ -17,12 +17,18 @@ public class ParallelService {
         this.services = services;
     }
 
-    public Mono<CommonData> processServices() {
+    public Mono<CommonData> processServicesReactive() {
         CommonData initialData = new CommonData();
         return Flux.fromIterable(services)
                 .flatMap(commonService -> Mono.fromRunnable(() -> commonService.process(initialData))
                         .subscribeOn(Schedulers.parallel()))
                 .then(Mono.just(initialData));
 
+    }
+
+    public  CommonData processServicesNormal() {
+        CommonData initialData = new CommonData();
+        services.parallelStream().forEach(service ->  service.process(initialData));
+        return initialData;
     }
 }

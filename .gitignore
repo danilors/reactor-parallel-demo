@@ -22,3 +22,23 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# Gradle Build Output
+build/
+out/
+
+# Gradle Wrapper/Cache
+.gradle/
+
+# IDE-specific files
+.idea/
+*.iml
+
+# Miscellaneous
+*.tmp
+*.bak
+*.swp
+*~
+# Environment files
+.env
+
