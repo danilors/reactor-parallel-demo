@@ -1,5 +1,6 @@
 package br.com.danilo.parallel.common.model;
 
+
 public class CommonData {
 
     private Car car;
@@ -37,5 +38,15 @@ public class CommonData {
 
     public synchronized void setPen(Pen pen) {
         this.pen = pen;
+    }
+
+    @Override
+    public String toString() {
+        return "CommonData{" +
+                "car=" + car +
+                ", table=" + table +
+                ", chair=" + chair +
+                ", pen=" + pen +
+                '}';
     }
 }
