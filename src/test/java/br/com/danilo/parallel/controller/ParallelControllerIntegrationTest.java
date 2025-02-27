@@ -39,12 +39,13 @@ public class ParallelControllerIntegrationTest {
 
         CommonData response = objectMapper.readValue(content, CommonData.class);
 
+        logger.info(response.toString());
+
         assertNotNull(response.getCar());
         assertNotNull(response.getPen());
         assertNotNull(response.getTable());
         assertNotNull(response.getChair());
 
-        logger.info(response.toString());
 
     }
 
