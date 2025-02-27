@@ -14,7 +14,7 @@ public class CarService implements CommonService {
 
     @Override
     public void process(CommonData commonData) {
-        log.info("1 - getting cars");
+        log.info("running in thread: {}", Thread.currentThread().getName());
         var car = getCar();
         commonData.setCar(car);
     }

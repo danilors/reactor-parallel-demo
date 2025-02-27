@@ -14,8 +14,8 @@ public class TableService implements CommonService {
 
     @Override
     public void process(CommonData commonData) {
-        log.info("4 - getting table");
-        var table = new Table( new Random().nextInt(9000) + 1000);
+        log.info("running in thread: {}", Thread.currentThread().getName());
+        var table = new Table(new Random().nextInt(9000) + 1000);
         commonData.setTable(table);
     }
 }

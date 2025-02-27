@@ -24,15 +24,16 @@ public class ParalleController {
     }
 
     @GetMapping("/reactive")
-    public Mono<CommonData> getAllDataReactive() {
-        return parallelService.processServicesReactive();
+    public ResponseEntity<Mono<CommonData>> getAllDataReactive() {
+        log.info("/reactive -> Request to get all data");
+        return new ResponseEntity<>(parallelService.processServicesReactive(), HttpStatus.OK);
     }
 
     @GetMapping("/normal")
     public ResponseEntity<CommonData> getAllDataNormal() {
-        log.info("Request to get all data");
+        log.info("/normal -> Request to get all data");
         CommonData result = parallelService.processServicesNormal();
-        log.info("Request processed successfully");
+        log.info("/normal -> Request processed successfully: {}", result);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 }

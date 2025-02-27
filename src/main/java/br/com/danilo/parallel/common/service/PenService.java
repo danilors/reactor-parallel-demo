@@ -14,7 +14,7 @@ public class PenService implements CommonService {
 
     @Override
     public void process(CommonData commonData) {
-        log.info("3 - getting pen");
+        log.info("running in thread: {}", Thread.currentThread().getName());
         var pen = new Pen("blue" + new Random().nextInt(9000) + 1000);
         commonData.setPen(pen);
     }
