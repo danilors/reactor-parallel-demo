@@ -17,5 +17,6 @@ public class TableService implements CommonService {
         log.info("running in thread: {}", Thread.currentThread().getName());
         var table = new Table(new Random().nextInt(9000) + 1000);
         commonData.setTable(table);
+        log.info("Table: {} added", table);
     }
 }
