@@ -17,6 +17,7 @@ public class CarService implements CommonService {
         log.info("running in thread: {}", Thread.currentThread().getName());
         var car = getCar();
         commonData.setCar(car);
+        log.info("Car: {} added", car);
     }
 
     public Car getCar() {

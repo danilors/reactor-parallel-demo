@@ -16,7 +16,7 @@ public class ChairService implements CommonService {
     public void process(CommonData commonData) {
         log.info("running in thread: {}", Thread.currentThread().getName());
         var chair = new Chair(new Random().nextInt(9000) + 1000);
-
         commonData.setChair(chair);
+        log.info("Chair: {} added", chair);
     }
 }

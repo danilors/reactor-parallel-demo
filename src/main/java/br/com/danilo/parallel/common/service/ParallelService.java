@@ -12,9 +12,11 @@ import java.util.List;
 public class ParallelService {
 
     private final List<CommonService> services;
+    private final TaskExecutorService taskExecutorService;
 
-    public ParallelService(List<CommonService> services) {
+    public ParallelService(List<CommonService> services, TaskExecutorService taskExecutorService) {
         this.services = services;
+        this.taskExecutorService = taskExecutorService;
     }
 
     public Mono<CommonData> processServicesReactive() {
@@ -26,9 +28,7 @@ public class ParallelService {
 
     }
 
-    public  CommonData processServicesNormal() {
-        CommonData initialData = new CommonData();
-        services.parallelStream().forEach(service ->  service.process(initialData));
-        return initialData;
+    public CommonData processServicesNormal() {
+        return taskExecutorService.processTask(services);
     }
 }
