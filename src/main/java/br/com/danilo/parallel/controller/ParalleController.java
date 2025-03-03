@@ -1,7 +1,7 @@
 package br.com.danilo.parallel.controller;
 
-import br.com.danilo.parallel.common.model.CommonData;
-import br.com.danilo.parallel.common.service.ParallelService;
+import br.com.danilo.parallel.model.CommonData;
+import br.com.danilo.parallel.service.ParallelService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

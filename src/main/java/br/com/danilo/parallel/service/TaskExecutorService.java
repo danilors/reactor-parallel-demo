@@ -1,6 +1,6 @@
-package br.com.danilo.parallel.common.service;
+package br.com.danilo.parallel.service;
 
-import br.com.danilo.parallel.common.model.CommonData;
+import br.com.danilo.parallel.model.CommonData;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +11,7 @@ import java.util.concurrent.Executor;
 
 @Service
 public class TaskExecutorService {
+
     private final Executor taskExecutor;
 
     public TaskExecutorService(@Qualifier("taskExecutor") Executor taskExecutor) {

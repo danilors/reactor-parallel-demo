@@ -1,7 +1,7 @@
-package br.com.danilo.parallel.common.service;
+package br.com.danilo.parallel.service;
 
-import br.com.danilo.parallel.common.model.Chair;
-import br.com.danilo.parallel.common.model.CommonData;
+import br.com.danilo.parallel.model.Chair;
+import br.com.danilo.parallel.model.CommonData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ public class ChairService implements CommonService {
     @Override
     public void process(CommonData commonData) {
         log.info("running in thread: {}", Thread.currentThread().getName());
-        var chair = new Chair(new Random().nextInt(9000) + 1000);
+        var chair = new Chair(new Random().nextInt(9000) + 100);
         commonData.setChair(chair);
         log.info("Chair: {} added", chair);
     }

@@ -1,7 +1,7 @@
-package br.com.danilo.parallel.common.service;
+package br.com.danilo.parallel.service;
 
-import br.com.danilo.parallel.common.model.CommonData;
-import br.com.danilo.parallel.common.model.Table;
+import br.com.danilo.parallel.model.CommonData;
+import br.com.danilo.parallel.model.Table;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

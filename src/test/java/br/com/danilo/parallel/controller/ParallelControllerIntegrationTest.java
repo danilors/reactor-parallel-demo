@@ -1,6 +1,6 @@
 package br.com.danilo.parallel.controller;
 
-import br.com.danilo.parallel.common.model.CommonData;
+import br.com.danilo.parallel.model.CommonData;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -36,9 +36,7 @@ public class ParallelControllerIntegrationTest {
 
         String content = result.getResponse().getContentAsString();
 
-
         CommonData response = objectMapper.readValue(content, CommonData.class);
-
         logger.info(response.toString());
 
         assertNotNull(response.getCar());
